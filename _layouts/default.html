@@ -20,7 +20,7 @@
 				{% assign about=abouts | where:"lang", "en" %}
 			{% endif %}
 			{% assign cv=cvs | where:"lang", page.lang %}
-			{% if home | size == 0 %}
+			{% if cv | size == 0 %}
 				{% assign cv=cvs | where:"lang", "en" %}
 			{% endif %}
 			{% assign blog=blogs | where:"lang", page.lang %}
