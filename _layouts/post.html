@@ -17,5 +17,7 @@ comments: true
   {{ content }}
 </div>
 <div class="notecomments">
-{% include disqus.html %}
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
 </div>
