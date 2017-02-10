@@ -1,0 +1,12 @@
+<h1>{{ page.title }}</h1>
+    {% assign posts=site.posts | where:"lang", "en" %}
+    <ul class="posts">
+    {% for default in posts %}
+        {% assign translation = site.posts | where:"ref", default.ref | where:"lang", page.lang %}
+        {% if translation[0] %}
+            <li><span>{{ translation[0].date | date_to_string }}</span> » <a href="{{ translation[0].url }}" title="{{ translation[0].title }}">{{ translation[0].title }}</a></li>
+        {% else %}
+            <li><span>{{ default.date | date_to_string }}</span> » <a href="{{ default.url }}" title="{{ default.title }}">{{ default.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
