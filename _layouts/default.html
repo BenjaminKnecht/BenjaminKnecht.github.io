@@ -27,7 +27,7 @@
 			{% if blog.size == 0 %}
 				{% assign blog=blogs | where:"lang", "en" %}
 			{% endif %}
-	    		<ul>
+	    		<ul class="nav">
 				{% if home.size == 1 %}
 	        		<li><a href="{{ home[0].url }}">Home</a></li>
 				{% endif %}
