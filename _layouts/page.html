@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="/css/reset.css">
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
+		</head>
+		<body>
+            <header>
+            {% include header.html %}
+            </header>
+            <div><!-- featured posts --></div>
+            <div>
+                <!-- content wrapper -->
+                <div>
+                    <!-- main wrapper -->
+                    <ul>
+                    {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+                    {% for page in pages %}
+                      <li>
+                        <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                    <div class="content">
+                    
+                    {{ content }}
+                    
+                    </div><!-- /.content -->
+                </div>
+                <aside>
+                    <!-- side bar wrapper -->
+                </aside>
+            </div>
+			<footer>
+	    		<ul>
+	        		<li><a href="https://github.com/BenjaminKnecht">github.com/BenjaminKnecht</a></li>
+				</ul>
+			</footer>
+		</body>
+	</html>
